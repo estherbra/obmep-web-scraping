@@ -21,17 +21,17 @@ das escolas públicas e privadas, concatenando todas as tabelas e convertendo em
 Já o script "local_to_s3.py", utiliza o s3Hook para permitir acesso ao serviço externo s3 e criar uma função que envia o arquivo para o bucket especificado. Os dois scripts Python
 estão disponíveis na pasta "Passo 1" deste repositório.
 
-[politica](https://i.imgur.com/RCBF1ju.png)
+![politica](https://i.imgur.com/RCBF1ju.png)
 
 
 2. Na segunda etapa é criada a DAG "s3_ingestion_DAG.py", a qual apresenta dois Dummy Operators para representar o início e o fim do fluxo e dois Python Operators, que executam
 as funções importadas dos dois módulos python citados no passo 1.
 
-[dag](https://i.imgur.com/ZCmCXhB.png)
+![dag](https://i.imgur.com/ZCmCXhB.png)
 
-[dag](https://i.imgur.com/HkbUyys.png)
+![dag](https://i.imgur.com/HkbUyys.png)
 
-[s3](https://i.imgur.com/liQAeDS.png)
+![s3](https://i.imgur.com/liQAeDS.png)
 
 
 # Configurando o ambiente
