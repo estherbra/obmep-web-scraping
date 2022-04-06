@@ -25,7 +25,7 @@ estão disponíveis na pasta "Passo 1" deste repositório.
 
 
 2. Na segunda etapa é criada a DAG "s3_ingestion_DAG.py", a qual apresenta dois Dummy Operators para representar o início e o fim do fluxo e dois Python Operators, que executam
-as funções importadas dos dois módulos python citados no passo 1.
+as funções importadas dos dois módulos python citados no passo 1. A DAG file está disponível na pasta "Passo 2" deste repositório.
 
 ![dag](https://i.imgur.com/ZCmCXhB.png)
 
