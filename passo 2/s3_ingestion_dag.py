@@ -1,5 +1,5 @@
 from airflow import DAG
-from datetime import datetime, timedelta
+from datetime import datetime
 from airflow.operators.dummy_operator import DummyOperator
 from airflow.operators.python_operator import PythonOperator
 from scraper import scraping_function
@@ -15,7 +15,7 @@ default_args = {
 
 with DAG(
   "obmep_dag", 
-  schedule_interval=timedelta(minutes=1),
+  schedule_interval='@monthly',
   catchup=False,
   default_args=default_args
 ) as dag:

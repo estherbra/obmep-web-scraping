@@ -36,11 +36,6 @@ def scraping_function():
           tables = soup.find_all("table", {"class": "list"})
 
 
-          # headers = []
-
-          # for i in tables[0].find_all("th"):
-          #   headers.append(i.text)
-
           data_rows = []
           for table in tables:
             for row in table.find_all("tr"):
