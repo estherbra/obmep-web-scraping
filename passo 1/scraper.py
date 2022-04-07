@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 def scraping_function():
+    #Selecting URL to extract only headers on the second row, excluding the first row with header "nivel"
     url = 'http://premiacao.obmep.org.br/16aobmep/verRelatorioPremiadosGeral-AC.1.do.htm'
 
     page = requests.get(url)
@@ -13,6 +14,7 @@ def scraping_function():
     for i in tables[0].select('tr:nth-of-type(2)')[0].find_all('th'):
       headers.append(i.text)
 
+    #Scraping all tables
     all_data = []
 
     estados = ['AL', 'AC', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO']
@@ -51,7 +53,6 @@ def scraping_function():
 
     # Create a dataframe
     df_obmep = pd.DataFrame([headers] + all_data)
-    # with pd.option_context('display.max_rows', None, 'display.max_columns', None, 'display.width', 7):  # more options can be specified also
     df_obmep.columns = df_obmep.columns.astype(str)
 
     # Converts to Parquet format
