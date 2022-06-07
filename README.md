@@ -1,5 +1,5 @@
 <div style="font-size:20px">
-  <h1>Web Scraping and sending do S3 with Apache Airflow</h1>
+  <h1>Web Scraping and sending to S3 with Apache Airflow</h1>
 </div>
 
 # Sobre o Projeto
